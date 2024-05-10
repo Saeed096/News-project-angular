@@ -1,0 +1,59 @@
+{
+  "Products": [
+    {
+      "id": "1",
+      "name": "Iphone 15",
+      "quantity": 30,
+      "price": 40000,
+      "imageUrl": "/assets/images/iphone15.jpg",
+      "catId": 1,
+      "serialNum": 213518546
+    },
+    {
+      "id": "2",
+      "name": "samsung j12",
+      "quantity": 10,
+      "price": 30000,
+      "imageUrl": "/assets/images/sammsung.jpg",
+      "catId": 1, 
+      "serialNum": 546454538489
+    },
+    {
+      "id": "3",
+      "name": "playstation 5",
+      "quantity": 5,
+      "price": 30000,
+      "imageUrl": "/assets/images/playstation5.webp",
+      "catId": 2,
+      "serialNum": 213518546
+    },
+    {
+      "id": "4",
+      "name": "playstation 3",
+      "quantity": 6,
+      "price": 20000,
+      "imageUrl": "/assets/images/ps.jpg",
+      "catId": 2,
+      "serialNum": 213518546
+    },
+    {
+      "id": "d3e9",
+      "name": "Nokia 330",
+      "quantity": 2,
+      "price": 5000,
+      "serialNum": 24346849851,
+      "catId": 1,
+      "imageUrl": "C:\\fakepath\\Nokia.jpg"
+    }
+  ],
+  "Categories": [
+    {
+      "id": "1",
+      "name": "phones"
+    },
+    {
+      "id": "2",
+      "name": "playstations"
+    }
+  ]
+}

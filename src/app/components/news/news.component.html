@@ -1,0 +1,58 @@
+<a href="dashboard" class="btn btn-danger m-3">Back</a>
+
+<div class="w-25 m-auto d-flex my-4">
+<input #searchInput class="form-control me-2 d-inline" type="search" placeholder="Search" >
+<button class="btn btn-outline-success d-inline" (click)="search()">Search</button> 
+<button class="btn btn-outline-success d-inline mx-3" (click)="reset()">Reset</button> 
+</div>
+
+<!-- @if(removeClicked) 
+{ -->
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div #modalDiv class="modal fade d-none" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmation message</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         News "{{deletedNewsTitle}}" will be permanently deleted.. Are you sure to remove it?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="confirmDelete()" data-bs-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- } -->
+  
+<a href="addNews" class="btn btn-dark m-2">Add news</a> 
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">no</th>
+        <th scope="col">Name</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let news of filteredNews; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ news.title }}</td>
+          <td> <a href="editNews/{{news.id}}" class="btn btn-info">Edit</a> </td>
+          <td> <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger m-2" (click)="deleteNews(news.id , news.title)">Delete</button> </td>
+          <!-- Add more td elements for other author properties as needed -->
+        </tr>
+      </tbody>
+  </table>
+  
+
+        <!-- <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger m-2" (click)="removeProduct(product.id , product.name)">Remove</button> --> 

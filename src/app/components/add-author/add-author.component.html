@@ -1,0 +1,12 @@
+<a href="authors" class="btn btn-danger m-3">Back</a>
+
+
+<form class="m-3" #authorForm="ngForm">
+    <label for="nameInput" class="d-block my-2">Author name</label>
+    <input id="nameInput" [(ngModel)]="addedAuthorName" name="authorName" type="text" class="form form-control w-25 d-inline" required minlength="3" maxlength="20"/>
+    <button type="submit" (click)="add()" [disabled]="authorForm.invalid" class="mx-3 btn btn-success">Add</button>
+    <div *ngIf="authorForm.controls['authorName'].invalid && (authorForm.controls['authorName'].dirty || authorForm.controls['authorName'].touched)" class="text-danger">
+      <span *ngIf="authorForm.controls['authorName'].errors">Author name is required, and must be in between 3 and 20 characters.</span>
+    </div>
+  </form>
+  

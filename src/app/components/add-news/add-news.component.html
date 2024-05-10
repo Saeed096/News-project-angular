@@ -1,0 +1,38 @@
+<a href="news" class="btn btn-danger m-3">Back</a> 
+
+<div class="container m-3">
+  <form #newsForm="ngForm"> 
+    <ol class="text-danger">
+      {{ validationMsg }}
+    </ol>
+    <div class="form-group m-2">
+      <label for="newsTitle">Title</label>
+      <input #newsTitleInput type="text" class="form-control" id="newsTitle" aria-describedby="emailHelp" placeholder="Title" required ngModel name="title">
+    </div>
+     
+    <label class="m-1 d-block">Select author:</label>
+    <select #selectedAuthor class="form-control m-2">
+      <option *ngFor="let author of authors" [value]="author.id">
+        {{ author.name }}
+      </option>
+    </select>
+
+    <div class="form-group m-2">
+      <label for="newsDescription">News</label>
+      <textarea #newsTextarea type="text" class="form-control" id="newsDescription" placeholder="News description" required ngModel name="news"></textarea>
+    </div>
+
+    <div class="form-group m-2">
+      <label>Publication date</label>
+      <input #publicationDateInput type="date" class="form-control" placeholder="Publication date" required ngModel name="publicationDate"/>
+    </div>
+
+    <div class="form-group m-2">
+      <label>Upload image</label>
+      <input #imageInput id="imageInput" type="file" (change)="onFileSelected($event)" 
+      class="form-control" required ngModel name="image" accept=".png, .jpg, .jpeg"/>
+    </div>
+    
+    <button (click)="add()" class="btn btn-primary m-3" [disabled]="!newsForm.valid">Add</button> 
+  </form>
+</div>

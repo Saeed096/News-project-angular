@@ -1,0 +1,14 @@
+
+
+<div class="w-25 m-auto">  <!--m-auto not work with select but div "containers"-->
+    <select class="w-100 text-center" [(ngModel)]="selectedAuthorId">
+        <option value="0" selected>All authors</option>
+        <option [value]="author.id" *ngFor="let author of authors">{{author.name}}</option>  <!--structural directives change in dom-->
+    </select>
+    </div>
+
+    <app-user-news [sentAuthorId]="selectedAuthorId"></app-user-news>  
+
+    <!-- (itemAddedToCart)="updateBill($event)" -->
+
+   
